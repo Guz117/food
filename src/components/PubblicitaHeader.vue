@@ -25,10 +25,14 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../assets/scss/partials/_variables.scss";
+
     ul {
         list-style-type: none;
+        
         a {
             text-decoration: none;
+            color: $silverChalice
         }
     }
 </style>
