@@ -3,7 +3,7 @@
     <Jumbotron />
     <PopularRecepies />
     <Collection />
-   
+    <FarmTable />
   </main>
 </template>
 
@@ -11,6 +11,7 @@
 import Jumbotron from './Jumbotron.vue'
 import PopularRecepies from './PopularRecepies.vue'
 import Collection from './Collection.vue'
+import FarmTable from './FarmTable.vue'
 
 export default {
     name: 'Main',
@@ -18,6 +19,7 @@ export default {
       Jumbotron,
       PopularRecepies,
       Collection,
+      FarmTable,
     }
 }
 
