@@ -80,6 +80,55 @@
                     <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
                 </ul>
             </div>
+            <div class="buttons">
+                <span id="popular">Popular</span><span>Recent</span>
+            </div>
+            <div class="popular">
+                <ul class="ul-popular">
+                    <li class="li-popular" v-for="(popular, index) in populars"
+                        :key= "index">
+                        <div class="img-popular">
+                            <img :src="popular.img" alt="">
+                        </div>
+                        <div class="text-popular">
+                            <p class="title-popular">{{ popular.title }}<p/>
+                            <p class="data-popular">{{ popular.subTitle }}</p>
+                        </div>
+                    </li>        
+                </ul>
+            </div>
+            <div class="tweet">
+                <div class="theme">
+                    <p><span id="span-tweet">Tweets</span> <span id="by">by</span> <a href="#" class="fusion">@Theme_Fusion</a></p>
+                    <div class="info">
+                        <img :src="require('../assets/images/image.svg')" alt="">
+                    </div>
+                </div>
+                <div class="center-tweet">
+                    <div class="tweet-left">
+                        <img :src="require('../assets/images/3a74ce3d0532b7773b174c45ca3bd05a_normal.png')" alt="">
+                    </div>
+                    <div class="tweet-right">
+                        <div class="fusion-title">
+                            <p>ThemeFusion</p>
+                            <img :src="require('../assets/images/image (1).svg')" alt="">
+                        </div>
+                        <p class="fusion">@Theme_Fusion</p>
+                        <p class="need">Do you need sublime WordPress hosting for your next website? Take advantage of exclusive partner offers that we have secured just for you, &amp; launch your site in second with <a href="#">&#35;avada</a> on WP Engine Hosting &amp; get 30% Off this BlackFriday <a href="#">bit.ly/kjLLE2 &#35;BlackFriday 2020</a></p>
+                        <div class="black-friday">
+                            <img :src="require('../assets/images/En2TRxLW4AEiWUN.jpeg')" alt="">
+                        </div>
+                        <div class="icon">
+                            <div class="icon-img">
+                                <img :src="require('../assets/images/image (2).svg')" alt="">
+                                <img :src="require('../assets/images/image (3).svg')" alt="">
+                            </div>
+                            <p>21h</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
       </div>
       
@@ -93,6 +142,23 @@ export default {
     name: 'FarmTable',
     data() {
         return {
+            populars: [
+                {
+                    img: require('../assets/images/single-post-img3-66x66.jpg'),
+                    title: 'Food Corner: Top Japanese restaurant for Sushi',
+                    subTitle: 'March 25th 2019',
+                },
+                {
+                    img: require('../assets/images/slide1-bg-66x66.jpg'),
+                    title: 'City Guide: Singapore',
+                    subTitle: 'February 27th 2019',
+                },
+                {
+                    img: require('../assets/images/single-post-img3-66x66.jpg'),
+                    title: '6 Nutritional Tips to Help Burn Body Fat',
+                    subTitle: 'February 28th 2019',
+                },
+            ],
             sushi:[
                 {
                     img: require('../assets/images/single-post-img3-1200x790.jpg'),
@@ -187,7 +253,6 @@ export default {
 
 .col {
     width: 80%;
-    height: 1500px;
     margin: 0 auto;
     margin-top: 2em;
     display: flex;
@@ -318,7 +383,7 @@ export default {
     .col-right {
         width: 30%;
         height: 100%;
-        background-color:blueviolet;
+
 
         .recipes {
             width: 100%;
@@ -450,6 +515,160 @@ export default {
                     }
                 }
             }
+
+            .buttons {
+                margin-top: 2em;
+                display: flex;
+                justify-content: center;
+
+
+                span {
+                    padding: 0 1em;
+                    background-color: $cararra;
+                    border: 0;
+                    color: $capeCod;
+                    font-size: 0.9em;
+                    border: 0.3px solid $nevada;
+                    cursor: pointer;
+                }
+
+                span:hover {
+                    background-color: white;
+                }
+            }
+
+            .popular {
+                margin-top: 2em;
+                .ul-popular {
+                list-style: none;
+
+                .li-popular {
+                    display: flex;
+                    align-items: center;
+                    padding-bottom: 0.5em;
+
+
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                    }
+
+                    .text-popular {
+                        padding-left: 0.5em;
+
+                        .title-popular {
+                            font-size: 0.5em;
+                            font-family: $fontFamily;
+                        }
+                        .data-popular {
+                            font-size: 0.4em;
+                            font-family: $fontFamily;
+                            color: $nevada;
+                        }
+                    }
+                }
+            }
+            }
+
+            .tweet {
+                width: 100%;
+                padding: 0.5em;
+                background-color: white;
+                font-family: $fontFamily;
+
+                .theme {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    p {
+                        font-size: 0.7em;
+                        #by {
+                            font-size: 0.3em;
+                            color: $nevada;
+                        }
+                        a {
+                            text-decoration: none;
+                            font-size: 0.6em;
+                        }
+                    }
+                    .info {
+                        img {
+                            width: 10px;
+                        }
+                    }
+                }
+
+                .center-tweet {
+                    width: 95%;
+                    height: 90%;
+                    margin: 0 auto;
+                    display: flex;
+                    .tweet-left {
+                        width: 10%;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    .tweet-right {
+                        width: 100%;
+                        height: 100%;
+                        .fusion-title {
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            p {
+                                font-size: 0.6em;
+                            }
+                            
+                            img {
+                                width: 7%;
+                                }
+                            
+                        }
+                        .fusion {
+                            font-size: 0.4em;
+                            color: $nevada;
+                        }
+
+                        .need {
+                            font-size: 0.5em;
+                            a {
+                                text-decoration: none;
+                            }
+                        }
+
+                        .black-friday {
+                            width: 100%;
+                            margin: 0 auto;
+                            padding-top: 1em;
+                            img {
+                                width: 100%;
+                            }
+                        }
+
+                        .icon {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            .icon-img {
+                                img {
+                                    width: 12px;
+                                    padding-right: 5px;
+                                }
+                            }
+                            p {
+                                font-size: 0.5em;
+                            }
+                        }
+                    }
+                }
+
+                
+            }
+            
 
     }
 }
