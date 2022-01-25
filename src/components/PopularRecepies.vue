@@ -8,6 +8,12 @@
         <div class="cont-left">
             <div class="img">
                 <img :src="require('../assets/images/Yogurt-Nan-1200x790.jpg')" alt="">
+                <div class="hover">
+                    <div class="hover-center">
+                        <i class="fas fa-link"></i>
+                        <p>{{ recepies[0].title }}</p>
+                    </div>   
+                </div>
             </div>
             <div class="text">
                 <div class="cont-text">
@@ -22,7 +28,15 @@
             <ul>
                 <li v-for="(recepie, index) in recepies"
                     :key= "index">
-                    <img :src="recepie.img" alt="">     
+                    <div class="img">
+                        <img :src="recepie.img" alt="">     
+                        <div class="hover">
+                            <div class="hover-center">
+                                <i class="fas fa-link"></i>
+                                <p>{{ recepies[0].title }}</p>
+                            </div>   
+                        </div>
+                    </div>
                 </li>
             </ul>
 
@@ -125,12 +139,18 @@ export default {
     width: 48%;
     height: 100%;
     background-color: white;
+
+    
+
     .img {
         width: 100%;
+        position: relative;
         img {
             width: 100%;
             object-fit: cover;
         }
+
+        
     }
 
     .cont-text {
@@ -189,18 +209,53 @@ export default {
             li {
                 width: 49%;
                 height: 125px;
+                position: relative;
                 img {
                     width: 100%;
                     object-fit: cover;
                 }
             }
         }
-
-    
-
-    
 }
 
+.img:hover .hover {
+                display: block;
+            }
+        .hover {
+                position: absolute;
+                top: 0;
+                
+                background: rgb(255,127,0);
+                background: linear-gradient(350deg, rgba(255,127,0,1) 61%, rgba(255,255,255,1) 100%);
+                opacity: 0.9;
+                width: 100%;
+                height: 100%;
+                display: none;
+
+                .hover-center {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    p {
+                        color: $springWood;
+                    }
+    
+                    .fa-link {
+                        
+                        font-size: 0.7em;
+                        background-color: $springWood;
+                        padding: 0.5em;
+                        border-radius: 50%;
+                        
+                    }
+
+                }
+                
+
+            }
 
 
 </style>
