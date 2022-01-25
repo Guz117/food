@@ -1,19 +1,20 @@
 <template>
   <main>
     <Jumbotron />
-    <!-- <FoodieJournal /> -->
+    <PopularRecepies />
+   
   </main>
 </template>
 
 <script>
 import Jumbotron from './Jumbotron.vue'
-// import FoodieJournal from './FoodieJournal.vue'
+import PopularRecepies from './PopularRecepies.vue'
 
 export default {
     name: 'Main',
     components:{
       Jumbotron,
-      // FoodieJournal,
+      PopularRecepies,
     }
 }
 

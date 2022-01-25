@@ -74,7 +74,7 @@ export default {
 
     .jumbotron-tot {
         width: 100%;
-        height: 750px;
+        height: 850px;
         background-color: $cararra;
     }
 
