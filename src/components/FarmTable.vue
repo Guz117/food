@@ -54,7 +54,32 @@
                     </div>
                 </div>
             </div>
+            <div class="singapore">
+                <div class="singapore-img">
+                    <img :src="require('../assets/images/singapore-featured-image-1200x790.jpg')" alt="">
+                    <h4>City Guide: Singapore</h4>
+                </div>
+                <div class="all-city">
+                    <p><i class="fas fa-globe-americas"></i><a href="#"> VIEW ALL CITY GUIDES</a> </p>
+                </div>
+            </div>
 
+            <div class="search">
+                <i class="fas fa-search"></i>
+                <label for="search">Search...</label>
+                <input id="search" type="text" placeholder="Search...">
+            </div>
+
+            <div class="follow">
+                <p>Follow Us</p>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                </ul>
+            </div>
         </div>
       </div>
       
@@ -291,15 +316,14 @@ export default {
 
     
     .col-right {
-        width: 29%;
+        width: 30%;
         height: 100%;
         background-color:blueviolet;
 
         .recipes {
             width: 100%;
-            height: 250px;
             position: relative;
-            background-color: yellow;
+            
             img {
                 width: 100%;
                 height: 100%;
@@ -308,17 +332,125 @@ export default {
 
             .recipes-text {
                 position: absolute;
-                top: 0;
-                
-                .recipes-text-center {
-                    width: 100%;
-                    height: 100%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                font-family: $fontFamily;
+                font-size: 0.7em;
             }
         }
+
+        .singapore {
+            width: 100%;
+            padding-top: 2em;
+
+            
+
+            .singapore-img {
+                position: relative;
+                img {
+                width: 100%;
+                }
+            }
+            h4 {
+                position: absolute;
+                bottom: 2em;
+                font-size: 0.7em;
+                color: white;
+                background-color: rgba(0, 0, 0, 0.5);
+                padding: 2px 5px;
+            }
+            .all-city {
+                width: 100%;
+                background-color: $orange;
+                font-size: 0.6em;
+                text-align: center;
+                padding: 5px 0;
+                font-family: $fontFamily;
+                color: white;
+
+                a {
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+            
+        }
+
+        .singapore::after {
+                content: "";
+                display: inline-block;
+                width: 100%;
+                height: 0.5px;
+                background-color: #afafaf;
+        }
+
+        .search {
+            margin-top: 2em;
+            width: 1.6em;
+            height: 1.6em;
+            border-radius: 5px;
+            background-color: white;
+            font-size: 1em;
+            color: $silverChalice;
+            border: 1px solid $silverChalice;
+            }
+            .search {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+            height: 1.6em;
+            border-radius: 5px;
+            background-color: white;
+            }
+            .search:focus-within {
+            border: 2px solid $orange;
+            }
+            .search:focus-within i {
+            color: $orange;
+            }
+            .search label {
+            display: none;
+            }
+            .search input {
+            width: 85%;
+            background-color: transparent;
+            border: 0;
+            outline: 0;
+            }
+
+            .follow {
+                margin-top: 2em;
+                p {
+                    color: $orange;
+                    font-size: 0.8em;
+                    padding-bottom: 0.5em;
+                }
+                ul {
+                    display: flex;
+                    list-style: none;
+
+                    li {
+                        width: 20px;
+                        height: 20px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 0 0.1em;
+                        background-color: $silverChalice;
+                        border-radius: 2px;
+                        
+
+                        a {
+                            padding: 0.2em;
+                            color: $nevada;
+                        }
+                    }
+                }
+            }
+
     }
 }
 </style>
