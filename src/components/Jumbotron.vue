@@ -1,40 +1,43 @@
 <template>
-    <div class="jumbotron">
-        <img :src="journals[0].img" alt="">
-        <div class="icon">
-            <div class="demos">
-                <p><i class="fab fa-atlassian"></i></p>
-                <p class="text-icon">Demos</p>
+    <div class="jumbotron-tot">
+        <div class="jumbotron">
+            <img :src="journals[0].img" alt="">
+            <div class="icon">
+                <div class="demos">
+                    <p><i class="fab fa-atlassian"></i></p>
+                    <p class="text-icon">Demos</p>
+                </div>
+                <div class="sale">
+                    <p><span class="dollar">$</span><span class="trentanove">39</span></p>
+                    <p class="text-icon">On Sale</p>
+                </div>
             </div>
-            <div class="sale">
-                <p><span class="dollar">$</span><span class="trentanove">39</span></p>
-                <p class="text-icon">On Sale</p>
+            <div class="jumbotron-text">
+                <p class="pick">TODAY'S PICK</p>
+                <div class="jumbotron-text-center">
+                <h1>Food Corner: Top Jappanese Restaurant for Shushi</h1>
+                <p>March 25, 2019</p>
+                </div>
+            </div>
+            <div class="foodie-journal">
+                <h5>FOODIE JOURNAL</h5>
+                <ul>
+                    <li v-for="(journal, index) in journals"
+                        :key= "index">
+                        <div class="img-jumbotron">
+                            <img :src="journal.img" alt="">
+                            <div class="hover">
+                                <i class="fas fa-link"></i>
+                                <p>{{ journal.text }}</p>
+                            </div> 
+                        </div>
+                        <h4>{{ journal.text }}</h4>
+                        <p class="data">{{ journal.admin }}</p>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="jumbotron-text">
-            <p class="pick">TODAY'S PICK</p>
-            <div class="jumbotron-text-center">
-            <h1>Food Corner: Top Jappanese Restaurant for Shushi</h1>
-            <p>March 25, 2019</p>
-            </div>
-        </div>
-        <div class="foodie-journal">
-            <h5>FOODIE JOURNAL</h5>
-            <ul>
-                <li v-for="(journal, index) in journals"
-                    :key= "index">
-                    <div class="img-jumbotron">
-                        <img :src="journal.img" alt="">
-                        <div class="hover">
-                            <i class="fas fa-link"></i>
-                            <p>{{ journal.text }}</p>
-                        </div> 
-                    </div>
-                    <h4>{{ journal.text }}</h4>
-                    <p class="data">{{ journal.admin }}</p>
-                </li>
-            </ul>
-        </div>
+
     </div>
   
 </template>
@@ -69,6 +72,12 @@ export default {
 <style lang="scss">
 @import "../assets/scss/partials/_variables.scss";
 
+    .jumbotron-tot {
+        width: 100%;
+        height: 750px;
+        background-color: $cararra;
+    }
+
     .jumbotron {
         height: 500px;
         position: relative;
@@ -98,7 +107,7 @@ export default {
                 width: 55px;
                 height: 55px;
                 text-align: center;
-                background-color: $springWood;
+                background-color: white;
                 margin-bottom: 0.5em;
                 padding: 0.5em;
                 font-family: $fontFamily;
@@ -176,12 +185,33 @@ export default {
             width: 80%;
             margin: 0 auto;
             padding: 2em;
-            background-color: $springWood;
+            background-color: white;
 
             h5 {
             text-align: center;
             font-family: $fontFamily;
             padding-bottom: 1.5em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
+
+            h5::after {
+                content: '';
+                display: inline-block;
+                width: 39%;
+                height: 1px;
+                background-color: $silverChalice;
+                margin: 1em;
+            }
+
+            h5::before {
+                content: '';
+                display: inline-block;
+                width: 39%;
+                height: 1px;
+                background-color: $silverChalice;
+                margin: 1em;
             }
 
             ul {
@@ -206,6 +236,7 @@ export default {
                 .data {
                     font-family: $fontFamily;
                     font-size: 0.5em;
+                    color: $silverChalice;
                 }
             }
 
