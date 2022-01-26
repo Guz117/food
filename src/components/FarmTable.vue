@@ -39,6 +39,12 @@
                         :key= "index">
                             <div class="img">
                                 <img :src="farm.img" alt="">
+                                <div class="hover">
+                                    <div class="hover-center">
+                                        <i class="fas fa-link"></i>
+                                        <p>{{ farm.title }}</p>
+                                    </div>
+                                </div> 
                             </div>
                             <div class="text">
                                 <h4>{{ farm.title }}</h4>
@@ -403,6 +409,7 @@ export default {
             li {
                 width: 48%;
                 background-color: white;
+                cursor: pointer;
 
                 .img {
                     width: 100%;
@@ -427,6 +434,55 @@ export default {
                     }
                 }
             }
+
+            li:hover .hover {
+                display: block;
+            }
+
+            .img {
+            position: relative;
+                .hover {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: rgb(255,127,0);
+                    background: linear-gradient(350deg, rgba(255,127,0,1) 61%, rgba(255,255,255,1) 100%);
+                    opacity: 0.9;
+                    width: 101%;
+                    height: 101%;
+                    display: none;
+
+                    .hover-center {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+
+
+                        p {
+                            color: $springWood;
+                            text-align: center;
+                            font-size: 0.6em;
+                        }
+
+                        .fa-link {
+                            font-size: 0.7em;
+                            background-color: $springWood;
+                            padding: 0.5em;
+                            border-radius: 50%;
+                            font-size: 0.5em;
+                        }
+                    }    
+
+                }
+        }
+
+
+
+
         }
 
         .load-more {
