@@ -1,7 +1,7 @@
 <template>
   <div class="popular-recepies">
       <div class="title">
-          <h5>POPULAR RECEPIES</h5>
+          <h5>POPULAR RECIPES</h5>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque dolorum veritatis reiciendis dolor laborum voluptas ipsa qui, nisi dignissimos unde illum aliquam.</p>
       </div>
       <div class="cont">
@@ -47,7 +47,7 @@
 
 <script>
 export default {
-    name: 'PopularRecepies',
+    name: 'PopularRecipes',
     data() {
         return {
             recepies: [

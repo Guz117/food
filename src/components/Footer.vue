@@ -170,6 +170,7 @@ export default {
       width: 75%;
       height: 20%;
       padding-bottom: 0.5em;
+      cursor: pointer;
     }
   }
 

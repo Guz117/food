@@ -1,6 +1,6 @@
 <template>
     <div class="jumbotron-tot">
-        <div class="jumbotron">
+        <div @mouseover="stopAutoplay" @mouseleave="startAutoplay" class="jumbotron">
             <img :src="journals[counter].img" alt="">
             <div class="icon">
                 <div class="demos">
@@ -50,6 +50,7 @@ export default {
     data() {
         return {
             counter: 0,
+            autoPlayInterval: null,
             journals: [
                 {
                     img: require('../assets/images/single-post-img3-1200x790.jpg'),
@@ -73,7 +74,22 @@ export default {
     methods: {
         changeImage: function(index) {
             this.counter = index;
+        },
+        stopAutoplay: function () {
+        clearInterval(this.autoPlayInterval);
+        this.autoPlayInterval = null;
+        },
+        startAutoplay: function () {
+            this.autoPlayInterval = setInterval(() => {
+            this.next();
+            }, 4000);
+        },
+        next: function () {
+        this.counter += 1;
+        if (this.counter > this.journals.length - 1) {
+          this.counter = 0;
         }
+      },
     }
 }
 </script>

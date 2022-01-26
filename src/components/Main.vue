@@ -1,7 +1,7 @@
 <template>
   <main>
     <Jumbotron />
-    <PopularRecepies />
+    <PopularRecipes />
     <Collection />
     <FarmTable />
     <Subscribe />
@@ -11,7 +11,7 @@
 
 <script>
 import Jumbotron from './Jumbotron.vue'
-import PopularRecepies from './PopularRecepies.vue'
+import PopularRecipes from './PopularRecipes.vue'
 import Collection from './Collection.vue'
 import FarmTable from './FarmTable.vue'
 import Subscribe from './Subscribe.vue'
@@ -21,7 +21,7 @@ export default {
     name: 'Main',
     components:{
       Jumbotron,
-      PopularRecepies,
+      PopularRecipes,
       Collection,
       FarmTable,
       Subscribe,

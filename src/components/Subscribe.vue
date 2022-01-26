@@ -1,7 +1,7 @@
 <template>
   <div class="subscribe">
     <div class="subscribe-center">
-      <h4>Subscribe Receive A Free eBook</h4>
+      <h4>Subscribe <span>&#38;</span> Receive A Free eBook</h4>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates omnis distinctio doloribus harum sunt explicabo nobis numquam soluta</p>
       <div class="email">
         <form action="">
@@ -38,6 +38,10 @@ export default {
     width: 60%;
     h4 {
       text-align: center;
+      span {
+        color: $orange;
+        font-size: 1.5em;
+      }
     }
     p {
       text-align: center;
