@@ -208,7 +208,6 @@ export default {
     
             li {
                 width: 49%;
-                height: 125px;
                 position: relative;
                 img {
                     width: 100%;
@@ -224,7 +223,6 @@ export default {
         .hover {
                 position: absolute;
                 top: 0;
-                
                 background: rgb(255,127,0);
                 background: linear-gradient(350deg, rgba(255,127,0,1) 61%, rgba(255,255,255,1) 100%);
                 opacity: 0.9;

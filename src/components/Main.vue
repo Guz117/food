@@ -4,6 +4,8 @@
     <PopularRecepies />
     <Collection />
     <FarmTable />
+    <Subscribe />
+    <EndMain />
   </main>
 </template>
 
@@ -12,6 +14,8 @@ import Jumbotron from './Jumbotron.vue'
 import PopularRecepies from './PopularRecepies.vue'
 import Collection from './Collection.vue'
 import FarmTable from './FarmTable.vue'
+import Subscribe from './Subscribe.vue'
+import EndMain from './EndMain.vue'
 
 export default {
     name: 'Main',
@@ -20,6 +24,8 @@ export default {
       PopularRecepies,
       Collection,
       FarmTable,
+      Subscribe,
+      EndMain,
     }
 }
 

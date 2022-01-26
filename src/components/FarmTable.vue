@@ -43,6 +43,10 @@
                         
                     </ul>
                 </div>
+
+                <div class="load-more">
+                    <p>LOAD MORE POSTS</p>
+                </div>
             </div>
         
         <div class="col-right">
@@ -216,7 +220,7 @@ export default {
 .farm-table {
     background-color: $cararra;
     margin: 0 auto;
-    padding-top: 5em;
+    padding: 5em 0;
 }
 
 .blog {
@@ -371,6 +375,19 @@ export default {
                         padding-top: 0.5em;
                     }
                 }
+            }
+        }
+
+        .load-more {
+            width: 100%;
+            margin-top: 1em;
+            background-color: $osloGray;
+            cursor: pointer;
+            p {
+                color: $capeCod;
+                font-family: $fontFamily;
+                font-size: 0.8em;
+                text-align: center;
             }
         }
     }
