@@ -15,8 +15,8 @@
             <div class="jumbotron-text">
                 <p class="pick">TODAY'S PICK</p>
                 <div class="jumbotron-text-center">
-                <h1>Food Corner: Top Jappanese Restaurant for Shushi</h1>
-                <p>March 25, 2019</p>
+                <h1>{{ journals[counter].text }}i</h1>
+                <p>{{ journals[counter].admin }}</p>
                 </div>
             </div>
             <div class="foodie-journal">
