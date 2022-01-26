@@ -70,4 +70,20 @@ export default {
         font-size: 0.8em;
         padding-left: 1em;
     }
+
+    .fa-facebook-f:hover {
+        color: blue;
+    }
+
+    .fa-instagram:hover {
+        color: blueviolet;
+    }
+
+    .fa-twitter:hover {
+        color: lightskyblue;
+    }
+
+    .fa-youtube:hover {
+        color: red;
+    }
 </style>

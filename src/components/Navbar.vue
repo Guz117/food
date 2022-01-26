@@ -3,6 +3,7 @@
       <div class="nav-avada">
         <img :src="require('../assets/images/avada-food-logo.png')" alt="">
       </div>
+      <i class="fas fa-bars"></i>
       <ul class="ul-navbar">
           <li v-for="(linkNav, index) in linksNav"
           :key="index"
@@ -107,5 +108,11 @@ export default {
                 }
             }
         }
+
     }
+        .fa-bars {
+          font-size: 2em;
+          padding: 0.5em 0;
+          display: none;
+        }
 </style>

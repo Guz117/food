@@ -100,6 +100,7 @@ export default {
         li:hover .collection-text a {
             background-color: $orange;
             color: white;
+            padding: 0 20px;
         }
 
         li {
@@ -126,7 +127,7 @@ export default {
                     font-family: $fontFamily;
                     font-weight: bold;
                     a{
-                        padding: 0 50px;
+                        
                         text-decoration: none;
                         color: $shark;
                     }

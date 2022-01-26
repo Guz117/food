@@ -97,11 +97,11 @@
                 </ul>
             </div>
             <div class="buttons">
-                <span id="popular">Popular</span><span>Recent</span>
+                <span id="popular" @click="popular()">Popular</span><span @click="recent()">Recent</span>
             </div>
             <div class="popular">
                 <ul class="ul-popular">
-                    <li class="li-popular" v-for="(popular, index) in populars"
+                    <li class="li-popular" v-for="(popular, index) in filter"
                         :key= "index">
                         <div class="img-popular">
                             <img :src="popular.img" alt="">
@@ -158,21 +158,43 @@ export default {
     name: 'FarmTable',
     data() {
         return {
+            post: '',
             populars: [
                 {
                     img: require('../assets/images/single-post-img3-66x66.jpg'),
                     title: 'Food Corner: Top Japanese restaurant for Sushi',
                     subTitle: 'March 25th 2019',
+                    post: 'popular'
+                },
+                {
+                    img: require('../assets/images/singapore-featured-image-66x66.jpg'),
+                    title: 'City Guide: Singapore',
+                    subTitle: 'February 27th 2019',
+                    post: 'popular'
                 },
                 {
                     img: require('../assets/images/slide1-bg-66x66.jpg'),
-                    title: 'City Guide: Singapore',
-                    subTitle: 'February 27th 2019',
-                },
-                {
-                    img: require('../assets/images/single-post-img3-66x66.jpg'),
                     title: '6 Nutritional Tips to Help Burn Body Fat',
                     subTitle: 'February 28th 2019',
+                    post: 'popular'
+                },
+                {
+                    img: require('../assets/images/fi-roundup-66x66.jpg'),
+                    title: 'Food Corner: Top Japanese restaurant for Sushi',
+                    subTitle: 'Jenuary 25th 2019',
+                    post: 'recent'
+                },
+                {
+                    img: require('../assets/images/fi-korean-food-66x66.jpg'),
+                    title: 'City Guide: Singapore',
+                    subTitle: 'Jenuary 27th 2019',
+                    post: 'recent'
+                },
+                {
+                    img: require('../assets/images/singapore-featured-image-66x66.jpg'),
+                    title: '6 Nutritional Tips to Help Burn Body Fat',
+                    subTitle: 'Jenuary 28th 2019',
+                    post: 'recent'
                 },
             ],
             sushi:[
@@ -221,6 +243,26 @@ export default {
                     text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis explicabo fuga dolorem quos inventore dignissimos, architecto, porro, iste veniam maxime assumenda facere libero unde quo culpa a! Explicabo, error quo.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis explicabo fuga dolorem quos inventore dignissimos, architecto, porro, iste veniam maxime assumenda facere libero unde quo culpa a! Explicabo, error quo.' 
                 },
             ],
+        }
+    },
+
+    computed: {
+        filter() {
+            if (this.post === '') {
+                return this.populars
+            }
+        
+            return this.populars.filter((element) => element.post === this.post)
+        }
+    },
+
+    methods: {
+        popular() {
+            this.post = 'popular';
+            
+        },
+        recent() {
+            this.post = 'recent';
         }
     }
 }
@@ -640,6 +682,10 @@ export default {
                         }
                     }
                 }
+
+                .fa-pinterest-p:hover {
+                    color: rgb(187, 46, 46)
+                }
             }
 
             .buttons {
@@ -649,7 +695,8 @@ export default {
 
 
                 span {
-                    padding: 0.7em 2.5em;
+                    width: 100%;
+                    text-align: center;
                     background-color: $cararra;
                     border: 0;
                     color: $capeCod;
