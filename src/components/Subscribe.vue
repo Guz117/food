@@ -8,7 +8,7 @@
           <label for="insert"></label>
           <input id="insert" type="text" placeholder="Insert your email_*">
         </form>
-        <button>SUBSCIBE</button>
+        <button>SUBSCRIBE</button>
       </div>
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequat</p>
     </div>

@@ -14,6 +14,12 @@
                 <div class="col-left-top">
                     <div class="img">
                         <img :src="sushi[0].img" alt="">
+                        <div class="hover">
+                            <div class="hover-center">
+                                <i class="fas fa-link"></i>
+                                <p>{{ sushi[0].title }}</p>
+                            </div>   
+                        </div>
                     </div>
                     <div class="text">
                         <div class="cont-text">
@@ -275,6 +281,7 @@ export default {
             .img {
             width: 100%;
             position: relative;
+            cursor: pointer;
                 img {
                     width: 100%;
                     object-fit: cover;
@@ -334,6 +341,49 @@ export default {
                     }
                 }
             }
+
+
+            .img:hover .hover {
+                display: block;
+            }
+                .hover {
+                        position: absolute;
+                        top: 0;
+                        background: rgb(255,127,0);
+                        background: linear-gradient(350deg, rgba(255,127,0,1) 61%, rgba(255,255,255,1) 100%);
+                        opacity: 0.9;
+                        width: 100%;
+                        height: 100%;
+                        display: none;
+
+                        .hover-center {
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            p {
+                                color: $springWood;
+                                text-align: center;
+                                font-size: 0.6em;
+                            }
+            
+                            .fa-link {
+                                
+                                font-size: 0.7em;
+                                background-color: $springWood;
+                                padding: 0.5em;
+                                border-radius: 50%;
+                                font-size: 0.5em;
+                            }
+
+                        }
+                        
+
+                    }
+
+
         }
 
 
@@ -426,7 +476,7 @@ export default {
 
         .singapore {
             width: 100%;
-            padding-top: 2em;
+            padding: 2em 0;
 
             
 
@@ -467,10 +517,11 @@ export default {
                 width: 100%;
                 height: 0.5px;
                 background-color: #afafaf;
+                margin-top: 2em;
         }
 
         .search {
-            margin-top: 2em;
+            
             width: 1.6em;
             height: 1.6em;
             border-radius: 5px;
@@ -541,7 +592,7 @@ export default {
 
 
                 span {
-                    padding: 0 1em;
+                    padding: 0.7em 2.5em;
                     background-color: $cararra;
                     border: 0;
                     color: $capeCod;

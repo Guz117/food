@@ -27,8 +27,10 @@
                         <div class="img-jumbotron">
                             <img :src="journal.img" alt="">
                             <div class="hover">
-                                <i class="fas fa-link"></i>
-                                <p>{{ journal.text }}</p>
+                                <div class="hover-center">
+                                    <i class="fas fa-link"></i>
+                                    <p>{{ journal.text }}</p>
+                                </div>
                             </div> 
                         </div>
                         <h4>{{ journal.text }}</h4>
@@ -260,24 +262,30 @@ export default {
                 height: 101%;
                 display: none;
 
-                p {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    color: $springWood;
-                }
+                .hover-center {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
 
-                .fa-link {
-                    position: absolute;
-                    top: 40px;
-                    transform: translateX(-50%);
-                    font-size: 0.7em;
-                    background-color: $springWood;
-                    padding: 0.5em;
-                    border-radius: 50%;
-                    
-                }
+
+                    p {
+                        color: $springWood;
+                        text-align: center;
+                        font-size: 0.6em;
+                    }
+
+                    .fa-link {
+                        font-size: 0.7em;
+                        background-color: $springWood;
+                        padding: 0.5em;
+                        border-radius: 50%;
+                        font-size: 0.5em;
+                    }
+                }    
+
             }
         }
         

@@ -145,6 +145,7 @@ export default {
     .img {
         width: 100%;
         position: relative;
+        cursor: pointer;
         img {
             width: 100%;
             object-fit: cover;
@@ -189,6 +190,7 @@ export default {
             border: 0;
             font-size: 0.7em;
             margin-top: 2em;
+            cursor: pointer;
         }
     }
 }
@@ -209,6 +211,7 @@ export default {
             li {
                 width: 49%;
                 position: relative;
+                cursor: pointer;
                 img {
                     width: 100%;
                     object-fit: cover;
@@ -239,6 +242,8 @@ export default {
                     align-items: center;
                     p {
                         color: $springWood;
+                        text-align: center;
+                        font-size: 0.6em;
                     }
     
                     .fa-link {
@@ -247,7 +252,7 @@ export default {
                         background-color: $springWood;
                         padding: 0.5em;
                         border-radius: 50%;
-                        
+                        font-size: 0.5em;
                     }
 
                 }
