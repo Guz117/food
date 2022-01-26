@@ -1,7 +1,7 @@
 <template>
     <div class="jumbotron-tot">
         <div class="jumbotron">
-            <img :src="journals[0].img" alt="">
+            <img :src="journals[counter].img" alt="">
             <div class="icon">
                 <div class="demos">
                     <p><i class="fab fa-atlassian"></i></p>
@@ -22,7 +22,7 @@
             <div class="foodie-journal">
                 <h5>FOODIE JOURNAL</h5>
                 <ul>
-                    <li v-for="(journal, index) in journals"
+                    <li @click="changeImage(index)" v-for="(journal, index) in journals"
                         :key= "index">
                         <div class="img-jumbotron">
                             <img :src="journal.img" alt="">
@@ -49,6 +49,7 @@ export default {
     name: 'Jumbotron',
     data() {
         return {
+            counter: 0,
             journals: [
                 {
                     img: require('../assets/images/single-post-img3-1200x790.jpg'),
@@ -66,6 +67,12 @@ export default {
                     admin: 'By Admin | March 25th 2019'
                 }
             ],
+        }
+    },
+
+    methods: {
+        changeImage: function(index) {
+            this.counter = index;
         }
     }
 }

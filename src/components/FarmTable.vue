@@ -261,6 +261,7 @@ export default {
         border: 0;
         font-size: 0.7em;
         margin-top: 2em;
+        cursor: pointer;
         .fa-book-reader {
             padding-left: 10px;
         }
