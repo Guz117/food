@@ -53,7 +53,7 @@ export default {
 
 .end-main {
   width: 100%;
-  background-color: $cararra;
+  padding-bottom: 2em;
   ul {
     width: 100%;
     display: flex;
