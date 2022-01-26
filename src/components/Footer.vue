@@ -32,6 +32,10 @@
         <img :src="require('../assets/images/download-app-store.png')" alt="">
       </div>
     </div>
+    <div class="copyright">
+      <i class="fas fa-chevron-up"></i>
+      <p>&#169; Copyright 2012-2020 | Avada Theme by ThemeFusion | All Rights Reserved | Powered by WordPress</p>
+    </div>
 
   </div>
 </template>
@@ -83,7 +87,7 @@ export default {
 @import "../assets/scss/partials/_variables.scss";
 
 .footer {
-  padding-bottom: 2em;
+  
 
   .center-footer {
     width: 80%;
@@ -166,6 +170,28 @@ export default {
       width: 75%;
       height: 20%;
       padding-bottom: 0.5em;
+    }
+  }
+
+  .copyright {
+    padding: 0.5em 0;
+    margin-top: 2em;
+    display: flex;
+    align-items: center;
+    background-color: $cararra;
+    .fa-chevron-up {
+      width: 20px;
+      height: 20px;
+      background-color: $silverChalice;
+      text-align: center;
+      border-radius: 50%;
+      margin-right: 30%;
+      margin-left: 1em;
+    }
+    p {
+      font-family: $fontFamily;
+      font-size: 0.3em;
+      color: $silverChalice;
     }
   }
 }
