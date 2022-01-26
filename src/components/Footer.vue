@@ -123,6 +123,9 @@ export default {
           font-weight: bold;
           font-size: 0.5em;
         }
+        a:hover {
+          color: $orange;
+        }
       }
     }
   }

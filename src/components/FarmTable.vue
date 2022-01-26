@@ -570,6 +570,7 @@ export default {
                 text-align: center;
                 font-family: $fontFamily;
                 font-size: 0.7em;
+                cursor: pointer;
             }
         }
 

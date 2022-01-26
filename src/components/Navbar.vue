@@ -3,7 +3,7 @@
       <div class="nav-avada">
         <img :src="require('../assets/images/avada-food-logo.png')" alt="">
       </div>
-      <i class="fas fa-bars"></i>
+      <i class="fas fa-bars" v-on:click="isActive = !isActive"></i>
       <ul class="ul-navbar">
           <li v-for="(linkNav, index) in linksNav"
           :key="index"
@@ -12,6 +12,19 @@
           :href="linkNav.url">{{ linkNav.text }}</a></li>
           <li><i class="fas fa-search"></i></li>
       </ul>
+      <div class="hamburger-menu" v-bind:class="{ active: isActive }">
+        <ul class="hamburger-navbar">
+          <li v-for="(linkNav, index) in linksNav"
+          :key="index"
+          @click="changeActive(index)"
+          ><a :class="(linkNav.current == true) ? 'active' : ''" 
+          :href="linkNav.url">{{ linkNav.text }}</a></li>
+          <li><i class="fas fa-search"></i></li>
+        </ul>
+        <a href="#" class="close">
+          <i class="fas fa-times" v-on:click="isActive = !isActive"></i>
+        </a>
+      </div>
   </div>
 </template>
 
@@ -20,6 +33,7 @@ export default {
     name: 'Navbar',
     data() { 
     return {
+      isActive: false,
       linksNav: [
                 {
                     text: "Home",
@@ -66,7 +80,7 @@ export default {
           }
         }
       )
-    }
+    },
   }
     
 }
@@ -115,4 +129,72 @@ export default {
           padding: 0.5em 0;
           display: none;
         }
+
+        .hamburger-menu {
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: none;
+          padding: 20px;
+          width: 100%;
+          height: 100%;
+          min-width: 100vw;
+          min-height: 100vh;
+          background: white;
+
+        .fa-search {
+          color: $shark;
+        }
+
+        .fa-search:hover {
+          color: $orange;
+        }
+
+      }
+      .hamburger-menu ul {
+          display: flex;
+          height: 100%;
+          flex-direction: column;
+          align-items: flex-start;
+          list-style: none;
+          li {
+            padding-bottom: 1em;
+          }
+          a:hover {
+            color: $orange;
+          }
+      }
+      .hamburger-menu ul li a {
+          color: $shark;
+          text-decoration: none;
+          font-size: 1em;
+          font-family: $fontFamily;
+          
+      }
+      .close {
+          display: block;
+          position: absolute;
+          right: 20px;
+          top: 20px;
+          color: $orange;
+          font-size: 35px;
+          text-decoration: none;
+      }
+
+@media screen and (max-width: 730px)
+{
+    .ul-navbar {
+        display: none;
+    }
+    .fa-bars {
+        display: block;
+        height: 100%;
+        line-height: 70px;
+        font-size: 20px;
+    }
+
+    .hamburger-menu.active {
+        display: block;
+    }
+}
 </style>
