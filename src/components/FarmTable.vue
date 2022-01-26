@@ -368,6 +368,7 @@ export default {
                     flex-direction: column;
                     text-align: center;
                     font-size: 0.8em;
+                    padding-bottom: 0.5em;
 
                     p{
                         font-family: $fontFamily;

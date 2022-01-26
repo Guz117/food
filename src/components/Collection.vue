@@ -103,7 +103,7 @@ export default {
         }
 
         li {
-            width: 150px;
+            width: 20%;
             height: 90px;
             cursor: pointer;
             background-color: white;
@@ -116,7 +116,7 @@ export default {
                 justify-content: center;
 
                 img {
-                    width: 80%;
+                    width: 100%;
                     height: 70%;
                     object-fit: contain;
                 }
@@ -135,6 +135,7 @@ export default {
         }
     }
 }
+
 
 
 </style>
