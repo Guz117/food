@@ -122,7 +122,9 @@ export default {
                 }
             }
         }
-
+        .fa-search {
+          cursor: pointer;
+        }
     }
         .fa-bars {
           font-size: 2em;

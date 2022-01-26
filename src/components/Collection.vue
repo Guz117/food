@@ -9,8 +9,10 @@
             <li class="culinary" v-for="(collection, index) in collections"
                 :key= "index">
                 <div class="img">
-                    <img :src="collection.img" alt="">     
-                    <p class="collection-text"><a href="#">{{ collection.text }}</a></p>
+                    <img :src="collection.img" alt="">
+                    <div class="text-collection">
+                        <p class="collection-text"><a href="#">{{ collection.text }}</a></p>    
+                    </div>     
                 </div>
             </li>
           </ul>
@@ -97,11 +99,7 @@ export default {
         flex-wrap: wrap;
         gap: 20px;
 
-        li:hover .collection-text a {
-            background-color: $orange;
-            color: white;
-            padding: 0 20px;
-        }
+        
 
         li {
             width: 20%;
@@ -134,6 +132,25 @@ export default {
                 }
             }
         }
+    }
+
+    .text-collection {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+
+    li:hover .text-collection {
+        background-color: $orange;  
+    }
+
+    li:hover .collection-text a {
+        color: white;
+
     }
 }
 
