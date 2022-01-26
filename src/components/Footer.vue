@@ -33,7 +33,7 @@
       </div>
     </div>
     <div class="copyright">
-      <i class="fas fa-chevron-up"></i>
+      <a href="#start"><i class="fas fa-chevron-up"></i></a>
       <p>&#169; Copyright 2012-2020 | Avada Theme by ThemeFusion | All Rights Reserved | Powered by WordPress</p>
     </div>
 
@@ -179,14 +179,17 @@ export default {
     display: flex;
     align-items: center;
     background-color: $cararra;
+    a {
+      margin-right: 30%;
+      margin-left: 1em;
+    }
     .fa-chevron-up {
       width: 20px;
       height: 20px;
       background-color: $silverChalice;
       text-align: center;
       border-radius: 50%;
-      margin-right: 30%;
-      margin-left: 1em;
+      
     }
     p {
       font-family: $fontFamily;

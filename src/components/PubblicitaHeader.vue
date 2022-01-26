@@ -1,5 +1,5 @@
 <template>
-  <div class="pubblicita">
+  <div class="pubblicita" id="start">
       <div>
           <ul class="ul-pubblicita">
               <li class="pubb download"><a href="#">Download App</a></li>
